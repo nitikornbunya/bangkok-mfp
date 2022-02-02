@@ -15,7 +15,15 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css',
+      },
+      {
+        rel: 'script',
+        href: 'https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'
+      }
     ]
   },
 
@@ -44,12 +52,11 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
       themes: {
-        dark: {
-          primary: colors.blue.darken2,
+        light: {
+          primary: "#17985A",
           accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+          secondary: "#9CAAE4",
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
