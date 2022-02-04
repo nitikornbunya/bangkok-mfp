@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18.246" height="27.704" viewBox="0 0 18.246 27.704">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_1484" data-name="Path 1484" d="M21.835,239.538c0,1.466,3.185,2.654,7.113,2.654s7.113-1.188,7.113-2.654-3.184-2.654-7.113-2.654-7.113,1.188-7.113,2.654" transform="translate(-21.835 -236.884)" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="1.011" gradientTransform="matrix(0.373, 0, 0, -0.4, -0.091, 1.4)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#999"/>
+      <stop offset="1" stop-color="#fff"/>
+    </radialGradient>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_569" data-name="Rectangle 569" width="18.246" height="27.704" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_2374" data-name="Group 2374" transform="translate(-921.95 -683.296)">
+    <g id="Group_2361" data-name="Group 2361" transform="translate(490.427 81.415)">
+      <g id="Group_2329" data-name="Group 2329" transform="translate(431.523 601.881)">
+        <g id="Group_2324" data-name="Group 2324" transform="translate(2.064 22.396)" style="mix-blend-mode: multiply;isolation: isolate">
+          <g id="Group_2323" data-name="Group 2323" clip-path="url(#clip-path)">
+            <rect id="Rectangle_568" data-name="Rectangle 568" width="14.226" height="5.308" transform="translate(0 0)" fill="url(#radial-gradient)"/>
+          </g>
+        </g>
+        <g id="Group_2326" data-name="Group 2326">
+          <g id="Group_2325" data-name="Group 2325" clip-path="url(#clip-path-2)">
+            <path id="Path_1485" data-name="Path 1485" d="M9.123,0A9.123,9.123,0,0,0,5.235,17.377L9.08,23.834l3.813-6.4A9.123,9.123,0,0,0,9.123,0" fill="#17985a"/>
+          </g>
+        </g>
+        <g id="Group_2328" data-name="Group 2328">
+          <g id="Group_2327" data-name="Group 2327" clip-path="url(#clip-path-2)">
+            <path id="Path_1486" data-name="Path 1486" d="M31.453,23.81a7.65,7.65,0,1,1-7.65-7.589,7.62,7.62,0,0,1,7.65,7.589" transform="translate(-14.626 -14.687)" fill="#fff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path id="Path_1498" data-name="Path 1498" d="M7.454,0l-4,4.377L1.435,2.219,0,3.8,3.46,7.52,8.889,1.58Z" transform="translate(927.5 688.628)" fill="#58a434"/>
+  </g>
+</svg>

@@ -1,6 +1,30 @@
 <template>
   <v-col class="pa-0" justify="center" align="center">
-    <div id="map" style="width: 100%; height: 400px"></div>
+    <div class="overlay-menu">
+      <v-card class="pa-2">
+        <div class="d-flex flex-row justify-space-between">
+          <div class="px-4">
+            <v-select :items="organization" v-model="select" label="สังกัด"></v-select>
+          </div>
+          <div class="px-4">
+            <v-select :items="organization" v-model="select" label="เขต"></v-select>
+          </div>
+          <div class="px-4">
+            <v-select :items="organization" v-model="select" label="ความเสี่ยงทุจริต"></v-select>
+          </div>
+          <div class="px-4">
+            <v-select :items="organization" v-model="select" label="สถานะโครงการ"></v-select>
+          </div>
+          <div class="px-4">
+            <v-select :items="organization" v-model="select" label="มูลค่าโครงการ"></v-select>
+          </div>
+          <div class="px-4">
+            <v-select :items="organization" v-model="select" label="ปีงบประมาณ"></v-select>
+          </div>
+        </div>
+      </v-card>
+    </div>
+    <div id="map" style="width: 100%; height: 450px"></div>
     <div class="search-area d-flex flex-column">
       <h1>ระบุคำค้นหา</h1>
       <div class="search-row d-flex flex-row mt-6 justify-center">
@@ -13,18 +37,10 @@
           ></v-text-field>
         </div>
         <div>
-          <v-autocomplete
-            placeholder="กลุ่มหน่วยงาน"
-            dense
-            solo
-          ></v-autocomplete>
+          <v-autocomplete placeholder="กลุ่มหน่วยงาน" dense solo></v-autocomplete>
         </div>
         <div>
-          <v-autocomplete
-            placeholder="ประเภทการจัดหา"
-            dense
-            solo
-          ></v-autocomplete>
+          <v-autocomplete placeholder="ประเภทการจัดหา" dense solo></v-autocomplete>
         </div>
         <div>
           <v-btn color="#9CAAE4" dark>ค้นหา</v-btn>
@@ -69,20 +85,18 @@
           <template v-slot:item.risk="{ item }">
             <div class="red--text">
               {{ item.risk }}
-            </div> 
+            </div>
           </template>
         </v-data-table>
       </div>
     </div>
-
+    <v-divider class="container"></v-divider>
     <div class="corrupt-area container">
       <div class="d-flex flex-column justify-start my-8">
         <div class="title-project text-left">
           <b>โครงการใหม่ในกรุงเทพมหานคร</b>
         </div>
-        <div class="subtitle-project text-left">
-          รายละเอียดโครงการใหม่ในกรุงเทพมหานคร
-        </div>
+        <div class="subtitle-project text-left">รายละเอียดโครงการใหม่ในกรุงเทพมหานคร</div>
       </div>
       <div>
         <v-data-table
@@ -108,14 +122,14 @@
             </div>
           </template>
           <template v-slot:item.risk="{ item }">
-            <div class="red--text">
-              {{ item.risk }}
+            <div>
+              <img width="40px" :src="img_document" alt="">
             </div>
           </template>
         </v-data-table>
       </div>
     </div>
-
+    <v-divider class="container"></v-divider>
     <div class="container">
       <h1 class="my-8">หมวดหมู่การจัดซื้อจัดจ้าง</h1>
 
@@ -124,9 +138,7 @@
           <div class="d-flex flex-column justify-center align-center">
             <img :src="item.img" class="pa-4" width="100px" alt="" />
             {{ item.name }}
-            <div class="procurement-more secondary--text">
-              ดูรายการจัดซื้อ >
-            </div>
+            <div class="procurement-more secondary--text">ดูรายการจัดซื้อ ></div>
           </div>
         </v-col>
       </v-row>
@@ -136,9 +148,7 @@
           <div class="d-flex flex-column justify-center align-center">
             <img :src="item.img" class="pa-4" width="100px" alt="" />
             {{ item.name }}
-            <div class="procurement-more secondary--text">
-              ดูรายการจัดซื้อ >
-            </div>
+            <div class="procurement-more secondary--text">ดูรายการจัดซื้อ ></div>
           </div>
         </v-col>
       </v-row>
@@ -148,6 +158,7 @@
 
 <script>
 import img_icon1 from "@/assets/procurement/icon1.svg";
+import img_document from "@/assets/document.svg";
 const mapboxgl = require("mapbox-gl");
 
 export default {
@@ -169,6 +180,23 @@ export default {
         width: "15%",
       },
       { text: "ความเสี่ยง", align: "right", value: "risk", width: "15%" },
+    ],
+    corrupt_headers2: [
+      {
+        text: "ชื่อโครงการ",
+        align: "left",
+        value: "name",
+        width: "50%",
+        sortable: false,
+      },
+      { text: "วงเงินงบประมาณ", align: "right", value: "budget", width: "20%" },
+      {
+        text: "จำนวนผู้ประมูล",
+        align: "right",
+        value: "company",
+        width: "15%",
+      },
+      { text: "เอกสาร", align: "center", value: "risk", width: "15%" },
     ],
     corrupt_item: [
       {
@@ -236,6 +264,9 @@ export default {
       { name: "จ้างออกแบบ", img: require("@/assets/procurement/icon8.svg") },
     ],
     img_icon1: img_icon1,
+    organization: ['ทั้งหมด', 'สำนักการจราจรและขนส่ง'],
+    select: "ทั้งหมด",
+    img_document: img_document
   }),
   mounted() {
     this.map = new mapboxgl.Map({
@@ -256,7 +287,7 @@ export default {
   padding: 24px;
 }
 .search-row > div {
-  margin: 0px 10px;
+  margin: 0px 4px;
 }
 .title-project {
   font-size: 34px;

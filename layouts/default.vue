@@ -11,8 +11,7 @@
         </div>
       </div>
       <div class="d-flex flex-row">
-        <v-btn color="#17985A" depressed
-   dark>เข้าสู่ระบบ</v-btn>
+        <v-btn color="#17985A" depressed dark>เข้าสู่ระบบ</v-btn>
         <div class="mx-2">
           <v-text-field label="ค้นหา" outlined dense></v-text-field>
         </div>
@@ -116,8 +115,8 @@ export default {
         "pk.eyJ1Ijoibml0aWtvcm4iLCJhIjoiY2p6ZHR0Yjk0MDNxNDNncGhqbDk5M3ZpaCJ9.FW231UaLDWmlgt3d7HQ1yg",
       container: "map", // <div id="map"></div>
       style: "mapbox://styles/mapbox/streets-v11", // default style
-      center: [-21.9270884, 64.1436456], // starting position as [lng, lat]
-      zoom: 13,
+      center: [100.505208, 13.75842], // starting position as [lng, lat]
+      zoom: 10,
     });
   },
 };
@@ -165,5 +164,14 @@ body,
 
 .footer-copyright-area {
   width: 100%;
+}
+
+.overlay-menu {
+  position: absolute;
+  top: 180px;
+  z-index: 100000;
+  width: calc(100% - 40px);
+  margin: 20px;
+  height: 80px;
 }
 </style>
