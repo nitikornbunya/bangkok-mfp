@@ -26,6 +26,7 @@ export default {
       }
     ]
   },
+  mode: 'spa',
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
