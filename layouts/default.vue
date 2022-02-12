@@ -6,12 +6,14 @@
           <img height="60px" :src="logo_bkk" alt="" />
         </div>
         <div class="d-flex flex-column ml-4">
-          <div class="primary--text title-web">ข้อมูลการจัดซื้อจัดจ้างกรุงเทพมหานคร</div>
+          <div class="primary--text title-web">
+            ข้อมูลการจัดซื้อจัดจ้างกรุงเทพมหานคร
+          </div>
           <div>Bangkok Procurement</div>
         </div>
       </div>
       <div class="d-flex flex-row">
-        <v-btn color="#17985A" depressed dark>เข้าสู่ระบบ</v-btn>
+        <v-btn color="primary" depressed dark>เข้าสู่ระบบ</v-btn>
         <div class="mx-2">
           <v-text-field label="ค้นหา" outlined dense></v-text-field>
         </div>
@@ -31,9 +33,9 @@
     <v-footer color="white" class="container">
       <v-row class="py-6">
         <v-col cols="6" class="d-flex flex-row">
-          <div><img :src="logo_bkk" alt="" /></div>
+          <div><img width="50px" :src="logo_bkk" alt="" /></div>
           <div class="pl-6">
-            <h2 class="primary--text font-weight-normal">กรุงเทพมหานคร</h2>
+            <h2 class="primary--text font-weight-normal">#ถ้าผู้ว่าฯ ชื่อวิโรจน์</h2>
             <p>
               173 ศาลาว่าการกรุงเทพมหานคร (เสาชิงช้า) ถนนดินสอ<br />แขวงเสาชิงช้า
               เขตพระนคร กรุงเทพมหานคร 10200
@@ -67,8 +69,8 @@
       <div class="d-flex flex-row justify-center footer-copyright-area">
         <div class="footer-copyright">
           © Copyright By
-          โครงการพัฒนาระบบเผยแพร่ข้อมูลการจัดซื้อจัดจ้างตามพระราชบัญญัติฉบับใหม่ (E-GP)
-          All Rights Reserved.
+          โครงการพัฒนาระบบเผยแพร่ข้อมูลการจัดซื้อจัดจ้างตามพระราชบัญญัติฉบับใหม่
+          (E-GP) All Rights Reserved.
         </div>
       </div>
     </v-footer>
@@ -76,9 +78,11 @@
 </template>
 
 <script>
-import logo_bkk from "@/assets/logo-bkk.svg";
+// import logo_bkk from "@/assets/logo-bkk.svg";
+import logo_bkk from "@/assets/logo-wl.jpg";
 import footer_tel from "@/assets/tel.svg";
 import footer_email from "@/assets/email.svg";
+
 export default {
   name: "DefaultLayout",
   data() {
@@ -105,20 +109,19 @@ export default {
       right: true,
       rightDrawer: false,
       title: "Vuetify.js",
-      map: undefined,
+      map: undefined
     };
   },
   mounted() {
-    const mapboxgl = require("mapbox-gl");
-    this.map = new mapboxgl.Map({
-      accessToken:
-        "pk.eyJ1Ijoibml0aWtvcm4iLCJhIjoiY2p6ZHR0Yjk0MDNxNDNncGhqbDk5M3ZpaCJ9.FW231UaLDWmlgt3d7HQ1yg",
-      container: "map", // <div id="map"></div>
-      style: "mapbox://styles/mapbox/streets-v11", // default style
-      center: [100.505208, 13.75842], // starting position as [lng, lat]
-      zoom: 10,
-    });
-  },
+    // this.map = new mapboxgl.Map({
+    //   accessToken:
+    //     "pk.eyJ1Ijoibml0aWtvcm4iLCJhIjoiY2p6ZHR0Yjk0MDNxNDNncGhqbDk5M3ZpaCJ9.FW231UaLDWmlgt3d7HQ1yg",
+    //   container: "map", // <div id="map"></div>
+    //   style: "mapbox://styles/mapbox/streets-v11", // default style
+    //   center: [100.505208, 13.75842], // starting position as [lng, lat]
+    //   zoom: 10,
+    // });
+  }
 };
 </script>
 
@@ -139,7 +142,7 @@ body,
 }
 
 .menu-bar {
-  background-color: #9caae4;
+  background-color: #123054;
   height: 76px;
   display: flex;
   flex-direction: row;

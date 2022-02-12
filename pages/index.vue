@@ -10,16 +10,32 @@
             <v-select :items="organization" v-model="select" label="เขต"></v-select>
           </div>
           <div class="px-4">
-            <v-select :items="organization" v-model="select" label="ความเสี่ยงทุจริต"></v-select>
+            <v-select
+              :items="organization"
+              v-model="select"
+              label="ความเสี่ยงทุจริต"
+            ></v-select>
           </div>
           <div class="px-4">
-            <v-select :items="organization" v-model="select" label="สถานะโครงการ"></v-select>
+            <v-select
+              :items="organization"
+              v-model="select"
+              label="สถานะโครงการ"
+            ></v-select>
           </div>
           <div class="px-4">
-            <v-select :items="organization" v-model="select" label="มูลค่าโครงการ"></v-select>
+            <v-select
+              :items="organization"
+              v-model="select"
+              label="มูลค่าโครงการ"
+            ></v-select>
           </div>
           <div class="px-4">
-            <v-select :items="organization" v-model="select" label="ปีงบประมาณ"></v-select>
+            <v-select
+              :items="organization"
+              v-model="select"
+              label="ปีงบประมาณ"
+            ></v-select>
           </div>
         </div>
       </v-card>
@@ -43,10 +59,10 @@
           <v-autocomplete placeholder="ประเภทการจัดหา" dense solo></v-autocomplete>
         </div>
         <div>
-          <v-btn color="#9CAAE4" dark>ค้นหา</v-btn>
+          <v-btn color="#123054" dark>ค้นหา</v-btn>
         </div>
         <div>
-          <v-btn color="#9CAAE4" outlined>ค้นหาแบบละเอียด</v-btn>
+          <v-btn color="#123054" outlined>ค้นหาแบบละเอียด</v-btn>
         </div>
       </div>
     </div>
@@ -123,7 +139,7 @@
           </template>
           <template v-slot:item.risk="{ item }">
             <div>
-              <img width="40px" :src="img_document" alt="">
+              <img width="40px" :src="img_document" alt="" />
             </div>
           </template>
         </v-data-table>
@@ -157,6 +173,13 @@
 </template>
 
 <script>
+import map_bit_blue from "@/assets/map/bit-blue.svg";
+import map_car_blue from "@/assets/map/car-blue.svg";
+import map_car_red from "@/assets/map/car-red.svg";
+import map_tool_red from "@/assets/map/tool-red.svg";
+import map_tool_yellow from "@/assets/map/tool-yellow.svg";
+import map_correct from "@/assets/map/correct.svg";
+
 import img_icon1 from "@/assets/procurement/icon1.svg";
 import img_document from "@/assets/document.svg";
 const mapboxgl = require("mapbox-gl");
@@ -264,19 +287,66 @@ export default {
       { name: "จ้างออกแบบ", img: require("@/assets/procurement/icon8.svg") },
     ],
     img_icon1: img_icon1,
-    organization: ['ทั้งหมด', 'สำนักการจราจรและขนส่ง'],
+    organization: ["ทั้งหมด", "สำนักการจราจรและขนส่ง"],
     select: "ทั้งหมด",
-    img_document: img_document
+    img_document: img_document,
+    map_bit_blue: map_bit_blue,
+    map_car_blue: map_car_blue,
+    map_car_red: map_car_red,
+    map_tool_red: map_tool_red,
+    map_tool_yellow: map_tool_yellow,
+    map_correct: map_correct,
+    locationList: [
+      { lat: 13.756132, lon: 100.492807, icon: map_bit_blue, size: ["20px", "34px"] },
+      { lat: 13.687301, lon: 100.365048, icon: map_bit_blue, size: ["20px", "34px"] },
+      { lat: 13.782017, lon: 100.354062, icon: map_bit_blue, size: ["20px", "34px"] },
+      { lat: 13.72199, lon: 100.52229, icon: map_bit_blue, size: ["20px", "34px"] },
+      { lat: 13.822693, lon: 100.611554, icon: map_bit_blue, size: ["20px", "34px"] },
+      { lat: 13.734831, lon: 100.558339, icon: map_car_red, size: ["32px", "46px"] },
+      { lat: 13.760342, lon: 100.428391, icon: map_car_red, size: ["32px", "46px"] },
+      { lat: 13.8213591, lon: 100.566235, icon: map_car_red, size: ["32px", "46px"] },
+      { lat: 13.670622, lon: 100.685025, icon: map_car_red, size: ["32px", "46px"] },
+      { lat: 13.831361, lon: 100.683652, icon: map_car_blue, size: ["32px", "46px"] },
+      { lat: 13.899358, lon: 100.650006, icon: map_car_blue, size: ["32px", "46px"] },
+      { lat: 13.629253, lon: 100.435086, icon: map_tool_red, size: ["32px", "46px"] },
+      { lat: 13.71532, lon: 100.4144872, icon: map_tool_red, size: ["32px", "46px"] },
+      { lat: 13.839361, lon: 100.584088, icon: map_tool_yellow, size: ["32px", "46px"] },
+      { lat: 13.681297, lon: 100.468045, icon: map_tool_yellow, size: ["32px", "46px"] },
+      { lat: 13.647936, lon: 100.502377, icon: map_tool_yellow, size: ["32px", "46px"] },
+      { lat: 13.72666, lon: 100.604687, icon: map_correct, size: ["16px", "23px"] },
+      { lat: 13.758675, lon: 100.688458, icon: map_correct, size: ["16px", "23px"] },
+      { lat: 13.719322, lon: 100.459805, icon: map_correct, size: ["16px", "23px"] },
+      { lat: 13.764011, lon: 100.515423, icon: map_correct, size: ["16px", "23px"] },
+      { lat: 13.802689, lon: 100.575848, icon: map_correct, size: ["16px", "23px"] },
+      { lat: 13.671957, lon: 100.538083, icon: map_correct, size: ["16px", "23px"] },
+      { lat: 13.78135, lon: 100.772915, icon: map_correct, size: ["16px", "23px"] },
+    ],
   }),
   mounted() {
     this.map = new mapboxgl.Map({
       accessToken:
-        "pk.eyJ1Ijoibml0aWtvcm4iLCJhIjoiY2p6ZHR0Yjk0MDNxNDNncGhqbDk5M3ZpaCJ9.FW231UaLDWmlgt3d7HQ1yg",
+        "pk.eyJ1Ijoibml0aWtvcm4iLCJhIjoiY2t6am54MHIxMGluOTJwa2U2ZjNzMG9ybSJ9.m1eDRiYTmkKoHbXWJX9lBw",
       container: "map", // <div id="map"></div>
       style: "mapbox://styles/mapbox/streets-v11", // default style
       center: [100.529231, 13.748025], // starting position as [lng, lat]
       zoom: 10,
     });
+    // this.loopDraw();
+  },
+  methods: {
+    loopDraw() {
+      const self = this;
+      self.locationList.forEach((element) => {
+        const el = document.createElement("div");
+        el.className = "marker";
+        el.style.backgroundImage = "url(" + element.icon + ")";
+        el.style.width = element.size[0];
+        el.style.height = element.size[1];
+        el.style.backgroundSize = "100%";
+
+        new mapboxgl.Marker(el).setLngLat([element.lon, element.lat]).addTo(self.map);
+      });
+    },
   },
 };
 </script>
