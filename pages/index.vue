@@ -331,7 +331,7 @@ export default {
       center: [100.529231, 13.748025], // starting position as [lng, lat]
       zoom: 10,
     });
-    // this.loopDraw();
+    this.loopDraw();
   },
   methods: {
     loopDraw() {
